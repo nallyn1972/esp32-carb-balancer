@@ -1,0 +1,102 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build - ESP-IDF",
+      "type": "shell",
+      "command": "${config:idf.pythonBinPath}",
+      "args": [
+        "${env:IDF_PATH}/tools/idf.py",
+        "build"
+      ],
+      "problemMatcher": [
+        {
+          "owner": "cpp",
+          "fileLocation": [
+            "relative",
+            "${workspaceFolder}"
+          ],
+          "pattern": {
+            "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+            "file": 1,
+            "line": 2,
+            "column": 3,
+            "severity": 4,
+            "message": 5
+          }
+        }
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Clean - ESP-IDF",
+      "type": "shell",
+      "command": "${config:idf.pythonBinPath}",
+      "args": [
+        "${env:IDF_PATH}/tools/idf.py",
+        "fullclean"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Flash - ESP-IDF",
+      "type": "shell",
+      "command": "${config:idf.pythonBinPath}",
+      "args": [
+        "${env:IDF_PATH}/tools/idf.py",
+        "-p",
+        "${config:idf.port}",
+        "flash"
+      ],
+      "dependsOn": "Build - ESP-IDF",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Monitor - ESP-IDF",
+      "type": "shell",
+      "command": "${config:idf.pythonBinPath}",
+      "args": [
+        "${env:IDF_PATH}/tools/idf.py",
+        "-p",
+        "${config:idf.port}",
+        "monitor"
+      ],
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Flash & Monitor - ESP-IDF",
+      "type": "shell",
+      "command": "${config:idf.pythonBinPath}",
+      "args": [
+        "${env:IDF_PATH}/tools/idf.py",
+        "-p",
+        "${config:idf.port}",
+        "flash",
+        "monitor"
+      ],
+      "dependsOn": "Build - ESP-IDF",
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    }
+  ]
+}

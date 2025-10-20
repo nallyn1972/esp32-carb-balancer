@@ -10,7 +10,6 @@ managed_components/
 dependencies.lock
 
 # IDE files
-.vscode/
 *.swp
 *.swo
 *~
