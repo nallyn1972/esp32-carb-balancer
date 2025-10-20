@@ -36,11 +36,5 @@
   },
   "terminal.integrated.env.linux": {
     "PATH": "${env:PATH}"
-  },
-  "clangd.path": "C:\\Users\\neila\\.espressif\\tools\\esp-clang\\esp-19.1.2_20250312\\esp-clang\\bin\\clangd.exe",
-  "clangd.arguments": [
-    "--background-index",
-    "--query-driver=C:\\Users\\neila\\.espressif\\tools\\xtensa-esp-elf\\esp-14.2.0_20241119\\xtensa-esp-elf\\bin\\xtensa-esp32s3-elf-gcc.exe",
-    "--compile-commands-dir=c:\\workspace\\carb\\build"
-  ]
+  }
 }
