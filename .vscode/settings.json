@@ -1,30 +1,46 @@
 {
   "C_Cpp.intelliSenseEngine": "default",
   "C_Cpp.intelliSenseEngineFallback": "enabled",
-  "idf.adapterTargetName": "esp32",
+  "idf.adapterTargetName": "esp32s3",
   "idf.customExtraPaths": "",
   "idf.customExtraVars": {
-    "OPENOCD_SCRIPTS": "C:\\Users\\neila\\.espressif\\tools\\openocd-esp32\\v0.12.0-esp32-20240318/openocd-esp32/share/openocd/scripts",
     "IDF_CCACHE_ENABLE": "1",
-    "ESP_ROM_ELF_DIR": "C:\\Users\\neila\\.espressif\\tools\\esp-rom-elfs\\20240305/",
     "IDF_TARGET": "esp32s3"
   },
   "idf.flashType": "UART",
   "idf.openOcdConfigs": [
-    "interface/ftdi/esp_ftdi.cfg",
+    "interface/ftdi/esp32s3_ftdi.cfg",
     "target/esp32s3.cfg"
   ],
   "idf.portWin": "COM4",
   "idf.port": "/dev/ttyUSB0",
   "files.associations": {
     "*.h": "c",
-    "*.c": "c"
+    "*.c": "c",
+    "*.hpp": "cpp",
+    "*.cpp": "cpp"
   },
   "C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_commands.json",
+  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 4,
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "terminal.integrated.env.windows": {
+    "PATH": "${env:PATH}"
+  },
+  "terminal.integrated.env.linux": {
+    "PATH": "${env:PATH}"
+  },
   "clangd.path": "C:\\Users\\neila\\.espressif\\tools\\esp-clang\\esp-19.1.2_20250312\\esp-clang\\bin\\clangd.exe",
   "clangd.arguments": [
     "--background-index",
     "--query-driver=C:\\Users\\neila\\.espressif\\tools\\xtensa-esp-elf\\esp-14.2.0_20241119\\xtensa-esp-elf\\bin\\xtensa-esp32s3-elf-gcc.exe",
-    "--compile-commands-dir=c:\\workspace\\esp32s3-lvgl-template\\build"
+    "--compile-commands-dir=c:\\workspace\\carb\\build"
   ]
 }
